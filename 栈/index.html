@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>栈结构管理数据</title>
+  </head>
+  <script src="./Stack.js"></script>
+  <body>
+    <script>
+      const stack = new Stack()
+
+      stack.push(10)
+      stack.push(20)
+      stack.push(30)
+
+      stack.print() // 10 <- 20 <- 30
+
+      console.log(stack.peek()) // 30
+      console.log(stack.pop()) // 30
+      console.log(stack.peek()) // 20
+      console.log(stack.size()) // 2
+      console.log(stack.isEmpty()) // false
+
+      stack.clear()
+      console.log(stack.isEmpty()) // true
+    </script>
+  </body>
+</html>

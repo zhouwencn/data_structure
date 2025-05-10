@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>双向链表结构管理数据</title>
+  </head>
+  <script src="./DoublyLinkedList.js"></script>
+  <body>
+    <script>
+      // 引入 LinkedList 类（假设你已封装好）
+      const list = new LinkedList()
+
+      // 向链表尾部追加节点
+      list.append('A')
+      list.append('B')
+      list.append('C')
+
+      // 打印链表（正序）
+      list.printForward() // Forward: A → B → C
+
+      // 向链表头部插入节点
+      list.prepend('Start')
+
+      // 再次正序打印
+      list.printForward() // Forward: Start → A → B → C
+
+      // 反序打印
+      list.printBackward() // Backward: C ← B ← A ← Start
+
+      // 查找节点
+      const found = list.find('B')
+      console.log('找到节点：', found) // 找到节点： ListNode { value: 'B', next: ..., prev: ... }
+
+      // 删除节点
+      list.remove('B')
+      list.printForward() // Forward: Start → A → C
+      list.printBackward() // Backward: C ← A ← Start
+
+      // 删除头节点
+      list.remove('Start')
+      list.printForward() // Forward: A → C
+
+      // 删除尾节点
+      list.remove('C')
+      list.printForward() // Forward: A
+      list.printBackward() // Backward: A
+
+      // 删除最后一个节点
+      list.remove('A')
+      list.printForward() // Forward:
+    </script>
+  </body>
+</html>

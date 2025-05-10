@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>堆结构管理数据</title>
+  </head>
+  <script src="./Heap.js"></script>
+  <body>
+    <script>
+      // 最小堆示例（默认）：
+      const minHeap = new Heap()
+
+      minHeap.insert(5)
+      minHeap.insert(3)
+      minHeap.insert(8)
+      minHeap.insert(1)
+
+      console.log(minHeap.peek()) // 1
+      console.log(minHeap.extractTop()) // 1
+      console.log(minHeap.peek()) // 3
+
+      // 最大堆示例：
+      const maxHeap = new Heap((a, b) => b - a) // 传入比较函数
+
+      maxHeap.insert(5)
+      maxHeap.insert(3)
+      maxHeap.insert(8)
+      maxHeap.insert(1)
+
+      console.log(maxHeap.peek()) // 8
+      console.log(maxHeap.extractTop()) // 8
+      console.log(maxHeap.peek()) // 5
+    </script>
+  </body>
+</html>

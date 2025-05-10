@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>单项链表结构管理数据</title>
+  </head>
+  <script src="./SinglyLinkedList.js"></script>
+  <body>
+    <script>
+      const list = new SinglyLinkedList()
+
+      list.append(10)
+      list.append(20)
+      list.append(30)
+      list.prepend(5)
+      list.print() // List: 5 → 10 → 20
+
+      // list.remove(10)
+      // list.print() // List: 5 → 20
+
+      // console.log(list.find(20)) // 节点对象
+      // console.log(list.find(100)) // null
+    </script>
+  </body>
+</html>

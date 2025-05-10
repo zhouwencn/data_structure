@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>树结构管理数据</title>
+  </head>
+  <script src="./TreeHelper.js"></script>
+  <body>
+    <script>
+      const treeData = [
+        {
+          id: 1,
+          name: 'Root',
+          children: [
+            { id: 2, name: 'Child 1' },
+            { id: 3, name: 'Child 2' }
+          ]
+        }
+      ]
+
+      const treeHelper = new TreeHelper(treeData)
+
+      // 添加节点
+      treeHelper.addNode(3, { id: 4, name: 'Child 2-1' })
+
+      // 查找节点
+      console.log(treeHelper.findNode(4))
+
+      // 更新节点
+      treeHelper.updateNode(4, { name: 'Updated Child' })
+
+      // 删除节点
+      treeHelper.deleteNode(2)
+
+      // 遍历
+      treeHelper.traverse((node) => console.log(node.name))
+
+      // 获取最终树
+      console.log(treeHelper.getTree())
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图结构管理数据</title>
+  </head>
+  <script src="./Graph.js"></script>
+  <body>
+    <script>
+      const graph = new Graph() // 默认无向图
+
+      graph.addEdge('A', 'B')
+      graph.addEdge('A', 'C')
+      graph.addEdge('B', 'D')
+      graph.addEdge('C', 'E')
+
+      console.log('DFS from A:', graph.dfs('A'))
+      console.log('BFS from A:', graph.bfs('A'))
+
+      console.log('Is A connected to E?', graph.isConnected('A', 'E')) // true
+
+      graph.removeEdge('A', 'C')
+      console.log(
+        'Is A connected to E after removing edge A-C?',
+        graph.isConnected('A', 'E')
+      ) // false
+
+      graph.print()
+    </script>
+  </body>
+</html>

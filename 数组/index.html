@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组结构管理数据</title>
+  </head>
+  <script src="./ArrayHelper.js"></script>
+  <body>
+    <script>
+      const arr = new ArrayHelper([1, 2, 3, 2])
+
+      arr.add(4)
+      arr.remove(2) // 删除第一个2
+      arr.update(0, 10) // index 0 改为 10
+      arr.unique() // 去重
+
+      console.log(arr.get(0)) // 10
+      console.log(arr.indexOf(3)) // 查找3的位置
+      console.log(arr.includes(4)) // true
+      console.log(arr.size()) // 长度
+      console.log(arr.toArray()) // 输出 [10, 3, 4]
+
+      arr.print() // 打印当前数组
+    </script>
+  </body>
+</html>

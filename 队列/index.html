@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>队列结构管理数据</title>
+  </head>
+  <script src="./Queue.js"></script>
+  <body>
+    <script>
+      const queue = new Queue()
+
+      queue.enqueue('A')
+      queue.enqueue('B')
+      queue.enqueue('C')
+
+      queue.print() // A <- B <- C
+
+      console.log(queue.peek()) // A
+      console.log(queue.dequeue()) // A
+
+      queue.print() // B <- C
+
+      console.log(queue.size()) // 2
+      console.log(queue.isEmpty()) // false
+
+      queue.clear()
+      console.log(queue.isEmpty()) // true
+    </script>
+  </body>
+</html>
