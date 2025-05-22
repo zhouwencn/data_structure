@@ -20,6 +20,10 @@ class SinglyLinkedList {
       this.head = newNode
       this.tail = newNode
     } else {
+      if (this.length === 2) {
+        console.log('isEqual', this.tail === this.head.next) // true，表示在append 20的时候指向的是同一个引用
+      }
+      // 延长链表长度，同时更新 this.tail指针引用
       this.tail.next = newNode
       this.tail = newNode
     }
@@ -79,8 +83,8 @@ class SinglyLinkedList {
   // 打印链表
   print() {
     let current = this.head
-    console.log("xxx", current);
-    
+    console.log('this.head', current)
+
     const result = []
     const result2 = []
     while (current) {
@@ -88,8 +92,8 @@ class SinglyLinkedList {
       result2.push(current)
       current = current.next
     }
-    console.log("result2", result2);
-    
-    console.log("List:", result.join(" → "))
+    console.log('result2', result2)
+
+    console.log('List:', result.join(' → '))
   }
 }
