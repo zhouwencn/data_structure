@@ -7,6 +7,7 @@ class SingleListNode {
 }
 
 class SinglyLinkedList {
+  test;
   constructor() {
     this.head = null
     this.tail = null
@@ -22,12 +23,16 @@ class SinglyLinkedList {
     } else {
       if (this.length === 2) {
         console.log('isEqual', this.tail === this.head.next) // true，表示在append 20的时候指向的是同一个引用
+        this.test.next = newNode;
       }
       // 延长链表长度，同时更新 this.tail指针引用
       this.tail.next = newNode
       this.tail = newNode
     }
     this.length++
+    if (this.length === 2) {
+      this.test = newNode; // 在这个时机点将test的引用指向和head的next引用一样的地址
+    }
   }
 
   // 向头部插入节点
